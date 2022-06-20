@@ -19,6 +19,7 @@ class CreateWorkingsTable extends Migration
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *
