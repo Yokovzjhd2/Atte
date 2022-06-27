@@ -15,8 +15,8 @@ class CreateWorkingsTable extends Migration
     {
         Schema::create('workings', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('working_start_time');
-            $table->timestamp('working_end_time');
+            $table->datetime('working_start_time');
+            $table->datetime('working_end_time');
         });
     }
 
