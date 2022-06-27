@@ -15,7 +15,8 @@ class CreateBreakingsTable extends Migration
     {
         Schema::create('breakings', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->datetime('breaking_start_time');
+            $table->datetime('breaking_end_time');
         });
     }
 

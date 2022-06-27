@@ -15,9 +15,11 @@ class CreateWorkingsTable extends Migration
     {
         Schema::create('workings', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->datetime('working_start_time');
+            $table->datetime('working_end_time');
         });
     }
+
 
     /**
      * Reverse the migrations.
