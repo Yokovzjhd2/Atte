@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Working;
 
 class WorkingsTableSeeder extends Seeder
 {
@@ -14,6 +15,6 @@ class WorkingsTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(6)->create();
+        Working::factory()->count(6)->create();
     }
 }

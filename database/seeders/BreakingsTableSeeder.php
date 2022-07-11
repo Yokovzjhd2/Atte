@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Breaking;
 
-class BreakingTableSeeder extends Seeder
+class BreakingsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class BreakingTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(6)->create();
+        Breaking::factory()->count(6)->create();
     }
 }
