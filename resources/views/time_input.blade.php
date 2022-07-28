@@ -16,14 +16,15 @@
   </div>
 
   @if(Auth::check())
-  <p>{{$users->name}}さんお疲れ様です</p>
+  <p>{{$users->name}}さんお疲れ様です！</p>
   @endif
 
   <form action="/home" method="POST">
-    <button type="submit" name="working_start_time">勤務開始</button>
-    <button type="submit" name="working_end_time">勤務終了</button>
-    <button type="submit" name="breaking_start_time">休憩開始</button>
-    <button type="submit" name="breaking_end_time">休憩終了</button>
+  @csrf
+    <input type="submit" name="working_start_time" value="勤務開始">
+    <input type="submit" name="working_end_time" value="勤務終了">
+    <input type="submit" name="breaking_start_time" value="休憩開始">
+    <input type="submit" name="breaking_end_time" value="休憩終了">
   </form>
 
 </body>

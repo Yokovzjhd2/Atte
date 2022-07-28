@@ -16,36 +16,26 @@ class AtteController extends Controller
     {
         $users = Auth::user();
 
-        return view('time_input',[
+        return view('time_input', [
             "users" => $users
         ]);
     }
 
     public function input_time(Request $request)
     {
-        $users = Auth::user();
 
-        $input_time = $request([
-            'working_start_time' => Carbon::now(),
-            'working_end_time' => Carbon::now(),
-            'breaking_start_time' => Carbon::now(),
-            'breaking_end_time' => Carbon::now()
-        ]);
-        
-        $working = new Working();
-        $working->user_id = auth()->id();
-        $working->working_start_time = $request->working_start_time;
-        $working->working_end_time = $request->working_end_time;
-        $working->save();
+        $workings = new Working();
+        $workings->user_id = auth()->id();
+        $workings->working_start_time = $request->working_start_time;
+        $workings->working_end_time = $request->working_end_time;
+        $workings->save();
 
-        $breaking = new Breaking();
-        $working->user_id = auth()->id();
-        $breaking->breaking_start_time = $request->breaking_start_time;
-        $breaking->breaking_end_time = $request->breaking_end_time;
-        $breaking->save();
+        $breakings = new Breaking();
+        $breakings->user_id = auth()->id();
+        $breakings->breaking_start_time = $request->breaking_start_time;
+        $breakings->breaking_end_time = $request->breaking_end_time;
+        $breakings->save();
 
         return redirect('/home');
-
     }
-    
 }
