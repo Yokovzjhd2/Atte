@@ -26,7 +26,7 @@
     <tbody>
       @foreach($items as $item)
       <tr>
-        <td>{{$item->user}}</td>
+        <td>{{$users->name}}</td>
         <td>{{$item->working_start_time}}</td>
         <td>{{$itrm->working_end_time}}</td>
         <td>{{$item->breaking_start_time}}</td>

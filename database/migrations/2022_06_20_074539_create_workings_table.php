@@ -15,6 +15,8 @@ class CreateWorkingsTable extends Migration
     {
         Schema::create('workings', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable()->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->datetime('working_start_time');
             $table->datetime('working_end_time');
         });

@@ -15,6 +15,8 @@ class CreateBreakingsTable extends Migration
     {
         Schema::create('breakings', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable()->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->datetime('breaking_start_time');
             $table->datetime('breaking_end_time');
         });

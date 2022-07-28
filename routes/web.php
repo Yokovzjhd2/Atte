@@ -24,5 +24,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('/home', [AtteController::class, '']);
-Route::post('/home', [AtteController::class, '']);
+Route::get('/home', [AtteController::class, 'manage'])->middleware('auth');;
+Route::post('/home', [AtteController::class, 'input_time'])->middleware('auth');;
