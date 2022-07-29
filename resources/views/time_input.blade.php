@@ -19,12 +19,19 @@
   <p>{{$users->name}}さんお疲れ様です！</p>
   @endif
 
-  <form action="/home" method="POST">
-  @csrf
+  <form action="/working_start" method="POST">
+    @csrf
     <input type="submit" name="working_start_time" value="勤務開始">
+  </form>
+  <form action="/working_end" method="POST">
     <input type="submit" name="working_end_time" value="勤務終了">
+  </form>
+  <form action="/breaking_start" method="POST">
     <input type="submit" name="breaking_start_time" value="休憩開始">
+  </form>
+  <form action="/beaking_end" method="POST">
     <input type="submit" name="breaking_end_time" value="休憩終了">
   </form>
+
 
 </body>
