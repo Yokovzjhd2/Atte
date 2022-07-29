@@ -26,14 +26,14 @@ class AtteController extends Controller
 
         $workings = new Working();
         $workings->user_id = auth()->id();
-        $workings->working_start_time = $request->working_start_time;
-        $workings->working_end_time = $request->working_end_time;
+        $workings->working_start_time = new Carbon('now', 'Asia/Tokyo');
+        $workings->working_end_time = new Carbon('now', 'Asia/Tokyo');
         $workings->save();
 
         $breakings = new Breaking();
         $breakings->user_id = auth()->id();
-        $breakings->breaking_start_time = $request->breaking_start_time;
-        $breakings->breaking_end_time = $request->breaking_end_time;
+        $breakings->breaking_start_time = new Carbon('now', 'Asia/Tokyo');
+        $breakings->breaking_end_time = new Carbon('now', 'Asia/Tokyo');
         $breakings->save();
 
         return redirect('/home');
