@@ -12,7 +12,7 @@
 
 
 <div>
-  <!-- <div>{{日にち}}</div> -->
+  <div>{{$date}}</div>
   <table>
     <thead>
       <tr>

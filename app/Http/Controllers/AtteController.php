@@ -20,7 +20,7 @@ class AtteController extends Controller
         ]);
     }
 
-    public function working_start(Request $request)
+    public function working_start()
     {
         $workings = new Working();
         $workings->user_id = auth()->id();
@@ -30,7 +30,7 @@ class AtteController extends Controller
         return redirect('/home');
     }
 
-    public function working_end(Request $request)
+    public function working_end()
     {
         $workings = new Working();
         $workings->user_id = auth()->id();
@@ -40,7 +40,7 @@ class AtteController extends Controller
         return redirect('/home');
     }
 
-    public function breaking_start(Request $request)
+    public function breaking_start()
     {
         $breakings = new Breaking();
         $breakings->user_id = auth()->id();
@@ -50,13 +50,23 @@ class AtteController extends Controller
         return redirect('/home');
     }
 
-    public function breaking_end(Request $request)
+    public function breaking_end()
     {
         $breakings = new Breaking();
         $breakings->user_id = auth()->id();
         $breakings->breaking_end_time = new Carbon('now', 'Asia/Tokyo');
 
         return redirect('/home');
+    }
+
+    public function date_list()
+    {
+        $users = Auth::user();
+        $date = Carbon::now()->format('Y-m-d');
+
+        return view('list', [
+            "users" => $users, $date
+        ]);
     }
 
 }
